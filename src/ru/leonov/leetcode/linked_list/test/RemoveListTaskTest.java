@@ -3,9 +3,11 @@ package ru.leonov.leetcode.linked_list.test;
 import ru.leonov.leetcode.linked_list.model.ListNode;
 import ru.leonov.leetcode.linked_list.solution.RemoveListTask;
 
-public class RemoveListTaskTest implements TaskTest {
+public class RemoveListTaskTest extends AbstractTest<RemoveListTask> {
 
-    private RemoveListTask solution = new RemoveListTask();
+    public RemoveListTaskTest() {
+        super(new RemoveListTask());
+    }
 
     @Override
     public void run() {

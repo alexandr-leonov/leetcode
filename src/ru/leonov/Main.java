@@ -8,6 +8,7 @@ public class Main {
         TestScope testScope = new TestScope();
         testScope.revertList();
         testScope.removeList();
+        testScope.oddEventList();
     }
 
 

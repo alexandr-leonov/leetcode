@@ -3,9 +3,11 @@ package ru.leonov.leetcode.linked_list.test;
 import ru.leonov.leetcode.linked_list.model.ListNode;
 import ru.leonov.leetcode.linked_list.solution.RevertListTask;
 
-public class RevertListTaskTest implements TaskTest {
+public class RevertListTaskTest extends  AbstractTest<RevertListTask> {
 
-    private RevertListTask solution = new RevertListTask();
+    public RevertListTaskTest() {
+        super(new RevertListTask());
+    }
 
     @Override
     public void run() {
