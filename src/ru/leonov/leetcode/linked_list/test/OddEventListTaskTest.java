@@ -1,6 +1,7 @@
 package ru.leonov.leetcode.linked_list.test;
 
-import ru.leonov.leetcode.linked_list.model.ListNode;
+import ru.leonov.leetcode.common.component.AbstractTest;
+import ru.leonov.leetcode.common.model.ListNode;
 import ru.leonov.leetcode.linked_list.solution.OddEventListTask;
 
 public class OddEventListTaskTest extends AbstractTest<OddEventListTask> {

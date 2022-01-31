@@ -1,6 +1,7 @@
-package ru.leonov.leetcode.linked_list.facade;
+package ru.leonov.leetcode;
 
 import ru.leonov.leetcode.linked_list.LinkedListTestScope;
+import ru.leonov.leetcode.two_pointer.TwoPointerTestScope;
 
 public class CheckTaskFacade {
     public void checkAllLinkedListTasks() {
@@ -9,5 +10,10 @@ public class CheckTaskFacade {
         linkedListTestScope.removeList();
         linkedListTestScope.oddEventList();
         linkedListTestScope.palindromeList();
+    }
+
+    public void checkAllTwoPointerTasks() {
+        TwoPointerTestScope twoPointerTestScope = new TwoPointerTestScope();
+        twoPointerTestScope.detectCycle();
     }
 }

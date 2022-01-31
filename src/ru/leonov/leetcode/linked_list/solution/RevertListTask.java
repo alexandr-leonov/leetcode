@@ -1,6 +1,7 @@
 package ru.leonov.leetcode.linked_list.solution;
 
-import ru.leonov.leetcode.linked_list.model.ListNode;
+import ru.leonov.leetcode.common.component.Solution;
+import ru.leonov.leetcode.common.model.ListNode;
 
 public class RevertListTask extends Solution {
 

@@ -1,4 +1,4 @@
-package ru.leonov.leetcode.linked_list.test;
+package ru.leonov.leetcode.common.component;
 
 public interface TaskTest {
     void run();

@@ -1,4 +1,4 @@
-package ru.leonov.leetcode.linked_list.model;
+package ru.leonov.leetcode.common.model;
 
 import java.util.Objects;
 
