@@ -33,6 +33,7 @@ public class DetectCycleTest extends AbstractTest<DetectCycleTask> {
         assertResult(node2, solution.detectCycle(initNode));
     }
 
+
     private void baseFlow_FullCycle() {
         System.out.println(this.getClass().getSimpleName() + "#baseFlow_FullCycle starting test");
         ListNode initNode = new ListNode(1);
