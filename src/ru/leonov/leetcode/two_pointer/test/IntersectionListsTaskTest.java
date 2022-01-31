@@ -13,6 +13,7 @@ public class IntersectionListsTaskTest  extends AbstractTest<IntersectionListsTa
     public void run() {
         baseFlow();
         notIntersect();
+        difficultBaseFlow();
     }
 
     private void baseFlow() {
@@ -33,5 +34,17 @@ public class IntersectionListsTaskTest  extends AbstractTest<IntersectionListsTa
         ListNode list2 = new ListNode(-1, new ListNode(5, new ListNode(7, new ListNode(9))));
 
         assertResult(null, solution.getIntersectionNode(list1, list2));
+    }
+
+    private void difficultBaseFlow() {
+        System.out.println(this.getClass().getSimpleName() + "#difficultBaseFlow starting test");
+
+        ListNode firstIntersectNode = new ListNode(4, new ListNode(5, new ListNode(6)));
+
+        ListNode list1 = new ListNode(1, new ListNode(2, new ListNode(3, firstIntersectNode)));
+        ListNode list2 = new ListNode(1, firstIntersectNode);
+
+
+        assertResult(firstIntersectNode, solution.getIntersectionNode(list1, list2));
     }
 }
