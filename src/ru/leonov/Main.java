@@ -1,18 +1,11 @@
 package ru.leonov;
 
-import ru.leonov.leetcode.linked_list.TestScope;
+import ru.leonov.leetcode.linked_list.facade.CheckTaskFacade;
 
 public class Main {
 
     public static void main(String[] args) {
-        TestScope testScope = new TestScope();
-        testScope.revertList();
-        testScope.removeList();
-        testScope.oddEventList();
+        CheckTaskFacade facade = new CheckTaskFacade();
+        facade.checkAllLinkedListTasks();
     }
-
-
-
-
-
 }
