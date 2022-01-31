@@ -11,18 +11,22 @@ public class IntersectionListsTask extends Solution {
         https://leetcode.com/explore/learn/card/linked-list/214/two-pointer-technique/1215/
      */
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
-        ListNode innerNode = headB;
-        while (headA != null) {
-            while (headB != null) {
-                if (headA == headB) {
-                    return headB;
-                }
-                headB = headB.next;
-            }
-            headA = headA.next;
-            headB = innerNode;
-        }
+        ListNode nodeA = headA;
+        ListNode nodeB = headB;
 
-        return null;
+        while (nodeA != nodeB){
+            if(nodeA != null) {
+                nodeA = nodeA.next;
+            } else {
+                nodeA = headB;
+            }
+
+            if(nodeB != null) {
+                nodeB = nodeB.next;
+            } else {
+                nodeB = headA;
+            }
+        }
+        return nodeA;
     }
 }
