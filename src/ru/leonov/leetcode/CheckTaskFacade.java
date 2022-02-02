@@ -10,6 +10,7 @@ public class CheckTaskFacade {
         linkedListTestScope.removeList();
         linkedListTestScope.oddEventList();
         linkedListTestScope.palindromeList();
+        linkedListTestScope.mergeTwoSortedList();
     }
 
     public void checkAllTwoPointerTasks() {

@@ -10,5 +10,6 @@ public interface TaskTest {
         ) {
             throw new AssertionError(String.format("Expected [%s] not equal actual [%s]", expected, actual));
         }
+        System.out.println("Success finish.");
     }
 }

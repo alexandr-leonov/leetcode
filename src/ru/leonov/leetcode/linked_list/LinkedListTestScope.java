@@ -1,10 +1,7 @@
 package ru.leonov.leetcode.linked_list;
 
 import ru.leonov.leetcode.common.component.TestScope;
-import ru.leonov.leetcode.linked_list.test.OddEventListTaskTest;
-import ru.leonov.leetcode.linked_list.test.PalindromeListTaskTest;
-import ru.leonov.leetcode.linked_list.test.RemoveListTaskTest;
-import ru.leonov.leetcode.linked_list.test.RevertListTaskTest;
+import ru.leonov.leetcode.linked_list.test.*;
 
 public class LinkedListTestScope implements TestScope {
     public void revertList() {
@@ -21,6 +18,10 @@ public class LinkedListTestScope implements TestScope {
 
     public void palindromeList() {
         runner(new PalindromeListTaskTest());
+    }
+
+    public void mergeTwoSortedList() {
+        runner(new MergeTwoListsTaskTest());
     }
 
 }
