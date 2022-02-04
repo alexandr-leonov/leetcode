@@ -13,12 +13,13 @@ public class AddTwoNumbersTask extends Solution {
         You may assume the two numbers do not contain any leading zero, except the number 0 itself.
      */
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
-        ListNode resultNode = new ListNode();
+        ListNode resultNode = new ListNode(); // пустая голова
         ListNode head = resultNode;
         int sum = 0;
-        int newTenCount = 0;
-        int sumResult = 0;
-        int resultInOldTen = 0;
+        int newTenCount = 0; // единица в новый порядок
+        int sumResult = 0; // сумма двух чисел может быть двухзначной
+        int resultInOldTen = 0; // последнее число суммы
+        // складываем числа пока списки равны
         while (l1 != null && l2 != null) {
             sum = l1.val + l2.val + newTenCount;
             sumResult = sum / 10;
@@ -35,7 +36,7 @@ public class AddTwoNumbersTask extends Solution {
             l1 = l1.next;
             l2 = l2.next;
         }
-
+        // если список 1 длинее, складываем оставшиеся элементы
         while (l1 != null) {
             sum = l1.val + newTenCount;
             sumResult = sum / 10;
@@ -49,7 +50,7 @@ public class AddTwoNumbersTask extends Solution {
             resultNode = resultNode.next;
             l1 = l1.next;
         }
-
+        // если список 2 длинее, складываем оставшиеся элементы
         while (l2 != null) {
             sum = l2.val + newTenCount;
             sumResult = sum / 10;
@@ -64,11 +65,12 @@ public class AddTwoNumbersTask extends Solution {
             l2 = l2.next;
         }
 
+        // если осталась единица в следующий порядок, то добавляем в конец списка
         if (newTenCount != 0) {
             resultNode.next = new ListNode(newTenCount);
         }
 
-
+        // т.к. голова пустая, то основной массив начинается со следующего элемента
         return head.next;
 
     }
