@@ -17,5 +17,7 @@ public class CheckTaskFacade {
     public void checkAllTwoPointerTasks() {
         TwoPointerTestScope twoPointerTestScope = new TwoPointerTestScope();
         twoPointerTestScope.detectCycle();
+        twoPointerTestScope.intersectionLists();
+        twoPointerTestScope.removeNElementFromEndList();
     }
 }
