@@ -24,4 +24,8 @@ public class LinkedListTestScope implements TestScope {
         runner(new MergeTwoListsTaskTest());
     }
 
+    public void addTwoNumbers() {
+        runner(new AddTwoNumbersTaskTest());
+    }
+
 }

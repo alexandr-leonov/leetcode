@@ -11,6 +11,7 @@ public class CheckTaskFacade {
         linkedListTestScope.oddEventList();
         linkedListTestScope.palindromeList();
         linkedListTestScope.mergeTwoSortedList();
+        linkedListTestScope.addTwoNumbers();
     }
 
     public void checkAllTwoPointerTasks() {

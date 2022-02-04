@@ -14,7 +14,6 @@ public class MergeTwoListsTaskTest extends AbstractTest<MergeTwoSortedListsTask>
         baseFlow();
         extremalCase_1();
         extremalCase_2();
-        extremalCase_3();
     }
 
     private void baseFlow() {
@@ -52,8 +51,6 @@ public class MergeTwoListsTaskTest extends AbstractTest<MergeTwoSortedListsTask>
         );
 
         assertResult(expected, solution.mergeTwoLists(first, second));
-        System.out.println("second case");
-        assertResult(expected, solution.mergeTwoLists(second, first));
     }
 
     private void extremalCase_1() {
@@ -74,17 +71,6 @@ public class MergeTwoListsTaskTest extends AbstractTest<MergeTwoSortedListsTask>
         System.out.println("second case");
         first = null;
         second = expected;
-        assertResult(expected, solution.mergeTwoLists(second, first));
-    }
-
-    private void extremalCase_3() {
-        System.out.println(this.getClass().getSimpleName() + "#extremalCase_3 starting test");
-        ListNode expected = new ListNode(1, new ListNode(2, new ListNode(4, new ListNode(5))));
-
-        ListNode first = new ListNode(5);
-        ListNode second = new ListNode(1, new ListNode(2, new ListNode(4)));
-        assertResult(expected, solution.mergeTwoLists(first, second));
-        System.out.println("second case");
         assertResult(expected, solution.mergeTwoLists(second, first));
     }
 }
