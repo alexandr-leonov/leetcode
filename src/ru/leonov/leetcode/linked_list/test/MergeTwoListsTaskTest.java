@@ -2,6 +2,7 @@ package ru.leonov.leetcode.linked_list.test;
 
 import ru.leonov.leetcode.common.component.AbstractTest;
 import ru.leonov.leetcode.common.model.ListNode;
+import ru.leonov.leetcode.common.utils.CommonUtil;
 import ru.leonov.leetcode.linked_list.solution.MergeTwoSortedListsTask;
 
 public class MergeTwoListsTaskTest extends AbstractTest<MergeTwoSortedListsTask> {
@@ -18,37 +19,11 @@ public class MergeTwoListsTaskTest extends AbstractTest<MergeTwoSortedListsTask>
 
     private void baseFlow() {
         System.out.println(this.getClass().getSimpleName() + "#baseFlow starting test");
-        ListNode first = new ListNode(1,
-                new ListNode(3,
-                        new ListNode(5,
-                                new ListNode(8,
-                                        new ListNode(9)
-                                )
-                        )
-                )
-        );
 
-        ListNode second = new ListNode(1,
-                new ListNode(2,
-                        new ListNode(4)
-                )
-        );
-
-        ListNode expected = new ListNode(1,
-                new ListNode(1,
-                        new ListNode(2,
-                                new ListNode(3,
-                                        new ListNode(4,
-                                                new ListNode(5,
-                                                        new ListNode(8,
-                                                                new ListNode(9)
-                                                        )
-                                                )
-                                        )
-                                )
-                        )
-                )
-        );
+        ListNode first = CommonUtil.buildListNode(new int[]{1,3,5,8,9});
+        ListNode second = CommonUtil.buildListNode(new int[]{1,2,4});
+        CommonUtil.buildListNode(new int[]{1,1,2,3,4,5,8,9});
+        ListNode expected = CommonUtil.buildListNode(new int[]{1,1,2,3,4,5,8,9});
 
         assertResult(expected, solution.mergeTwoLists(first, second));
     }

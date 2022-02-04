@@ -2,6 +2,7 @@ package ru.leonov.leetcode.linked_list.test;
 
 import ru.leonov.leetcode.common.component.AbstractTest;
 import ru.leonov.leetcode.common.model.ListNode;
+import ru.leonov.leetcode.common.utils.CommonUtil;
 import ru.leonov.leetcode.linked_list.solution.RemoveListTask;
 
 public class RemoveListTaskTest extends AbstractTest<RemoveListTask> {
@@ -19,26 +20,9 @@ public class RemoveListTaskTest extends AbstractTest<RemoveListTask> {
 
     private void baseFlow() {
         System.out.println(this.getClass().getSimpleName() + "#baseFlow starting test");
-        ListNode initNode = new ListNode(1,
-                new ListNode(2,
-                        new ListNode(3,
-                                new ListNode(4,
-                                        new ListNode(5,
-                                                new ListNode(6, null))
-                                )
-                        )
-                )
-        );
 
-        ListNode expected = new ListNode(1,
-                new ListNode(2,
-                        new ListNode(3,
-                                new ListNode(4,
-                                        new ListNode(5, null)
-                                )
-                        )
-                )
-        );
+        ListNode initNode = CommonUtil.buildListNode(new int[]{1,2,3,4,5,6});
+        ListNode expected = CommonUtil.buildListNode(new int[]{1,2,3,4,5});
 
         assertResult(expected, solution.removeElements(initNode, 6));
 
@@ -46,27 +30,16 @@ public class RemoveListTaskTest extends AbstractTest<RemoveListTask> {
 
     private void extremalCase_1() {
         System.out.println(this.getClass().getSimpleName() + "#extremalCase_1 starting test");
-        ListNode initNode = new ListNode(7,
-                new ListNode(7,
-                        new ListNode(7,
-                                new ListNode(7,
-                                        new ListNode(7,
-                                                new ListNode(7, null))
-                                )
-                        )
-                )
-        );
+
+        ListNode initNode = CommonUtil.buildListNode(new int[]{7,7,7,7,7});
 
         assertResult(null, solution.removeElements(initNode, 7));
     }
 
     private void extremalCase_2() {
         System.out.println(this.getClass().getSimpleName() + "#extremalCase_2 starting test");
-        ListNode initNode = new ListNode(1,
-                new ListNode(2,
-                        null
-                )
-        );
+
+        ListNode initNode = CommonUtil.buildListNode(new int[]{1,2});
         ListNode expected = new ListNode(2, null);
 
         assertResult(expected, solution.removeElements(initNode, 1));

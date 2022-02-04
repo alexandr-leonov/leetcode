@@ -2,6 +2,7 @@ package ru.leonov.leetcode.linked_list.test;
 
 import ru.leonov.leetcode.common.component.AbstractTest;
 import ru.leonov.leetcode.common.model.ListNode;
+import ru.leonov.leetcode.common.utils.CommonUtil;
 import ru.leonov.leetcode.linked_list.solution.AddTwoNumbersTask;
 
 public class AddTwoNumbersTaskTest extends AbstractTest<AddTwoNumbersTask> {
@@ -26,9 +27,11 @@ public class AddTwoNumbersTaskTest extends AbstractTest<AddTwoNumbersTask> {
      */
     private void baseFlow() {
         System.out.println(this.getClass().getSimpleName() + "#baseFlow starting test");
-        ListNode l1 = new ListNode(2, new ListNode(4, new ListNode(3)));
-        ListNode l2 = new ListNode(5, new ListNode(6, new ListNode(4)));
-        ListNode expected = new ListNode(7, new ListNode(0, new ListNode(8)));
+
+        ListNode l1 = CommonUtil.buildListNode(new int[]{2,4,3});
+        ListNode l2 = CommonUtil.buildListNode(new int[]{5,6,4});
+        ListNode expected = CommonUtil.buildListNode(new int[]{7,0,8});
+        
         assertResult(expected, solution.addTwoNumbers(l1, l2));
     }
 
@@ -38,7 +41,7 @@ public class AddTwoNumbersTaskTest extends AbstractTest<AddTwoNumbersTask> {
      */
     private void extremalCase_1() {
         System.out.println(this.getClass().getSimpleName() + "#extremalCase_1 starting test");
-        assertResult(new ListNode(), solution.addTwoNumbers(new ListNode(), new ListNode()));
+        assertResult(new ListNode(), solution.addTwoNumbers(new ListNode(),new ListNode()));
     }
 
     /*
@@ -47,32 +50,32 @@ public class AddTwoNumbersTaskTest extends AbstractTest<AddTwoNumbersTask> {
      */
     private void extremalCase_2() {
         System.out.println(this.getClass().getSimpleName() + "#extremalCase_2 starting test");
-        ListNode l1 = new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9)))))));
-        ListNode l2 = new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9))));
-        ListNode expected = new ListNode(8, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(0, new ListNode(0, new ListNode(0, new ListNode(1))))))));
+        ListNode l1 = CommonUtil.buildListNode(new int[]{9,9,9,9,9,9,9});
+        ListNode l2 = CommonUtil.buildListNode(new int[]{9,9,9,9});
+        ListNode expected = CommonUtil.buildListNode(new int[]{8,9,9,9,0,0,0,1});
         assertResult(expected, solution.addTwoNumbers(l1, l2));
     }
 
     private void extremalCase_3() {
         System.out.println(this.getClass().getSimpleName() + "#extremalCase_3 starting test");
         ListNode l1 = new ListNode(9);
-        ListNode l2 = new ListNode(1, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9, new ListNode(9))))))))));
-        ListNode expected = new ListNode(0, new ListNode(0, new ListNode(0, new ListNode(0, new ListNode(0, new ListNode(0, new ListNode(0, new ListNode(0, new ListNode(0, new ListNode(0, new ListNode(1)))))))))));
+        ListNode l2 = CommonUtil.buildListNode(new int[]{1,9,9,9,9,9,9,9,9,9});
+        ListNode expected = CommonUtil.buildListNode(new int[]{0,0,0,0,0,0,0,0,0,0,1});
         assertResult(expected, solution.addTwoNumbers(l1, l2));
     }
 
     private void extremalCase_4() {
         System.out.println(this.getClass().getSimpleName() + "#extremalCase_4 starting test");
-        ListNode l1 = new ListNode(1, new ListNode(1, new ListNode(1, new ListNode(1, new ListNode(1, new ListNode(1, new ListNode(1, new ListNode(1, new ListNode(1, new ListNode(1, new ListNode(1)))))))))));
-        ListNode expected = new ListNode(2, new ListNode(2, new ListNode(2, new ListNode(2, new ListNode(2, new ListNode(2, new ListNode(2, new ListNode(2, new ListNode(2, new ListNode(2, new ListNode(2)))))))))));
+        ListNode l1 = CommonUtil.buildListNode(new int[]{1,1,1,1,1,1,1,1,1,1,1});
+        ListNode expected = CommonUtil.buildListNode(new int[]{2,2,2,2,2,2,2,2,2,2,2});
         assertResult(expected, solution.addTwoNumbers(l1, l1));
     }
 
     private void extremalCase_5() {
         System.out.println(this.getClass().getSimpleName() + "#extremalCase_5 starting test");
-        ListNode l1 = new ListNode(1, new ListNode(0, new ListNode(0, new ListNode(0, new ListNode(0, new ListNode(0, new ListNode(0, new ListNode(0, new ListNode(0, new ListNode(0, new ListNode(0, new ListNode(0, new ListNode(0, new ListNode(0, new ListNode(0, new ListNode(0, new ListNode(0, new ListNode(0, new ListNode(0, new ListNode(0, new ListNode(0, new ListNode(0, new ListNode(0, new ListNode(0, new ListNode(0, new ListNode(0, new ListNode(0, new ListNode(0, new ListNode(0, new ListNode(0, new ListNode(1)))))))))))))))))))))))))))))));
-        ListNode l2 = new ListNode(5, new ListNode(6, new ListNode(4)));
-        ListNode expected = new ListNode(6, new ListNode(6, new ListNode(4, new ListNode(0, new ListNode(0, new ListNode(0, new ListNode(0, new ListNode(0, new ListNode(0, new ListNode(0, new ListNode(0, new ListNode(0, new ListNode(0, new ListNode(0, new ListNode(0, new ListNode(0, new ListNode(0, new ListNode(0, new ListNode(0, new ListNode(0, new ListNode(0, new ListNode(0, new ListNode(0, new ListNode(0, new ListNode(0, new ListNode(0, new ListNode(0, new ListNode(0, new ListNode(0, new ListNode(0, new ListNode(1)))))))))))))))))))))))))))))));
+        ListNode l1 = CommonUtil.buildListNode(new int[]{1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1});
+        ListNode l2 = CommonUtil.buildListNode(new int[]{5,6,4});
+        ListNode expected = CommonUtil.buildListNode(new int[]{6,6,4,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1});
         assertResult(expected, solution.addTwoNumbers(l1, l2));
     }
 

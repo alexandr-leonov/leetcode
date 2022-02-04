@@ -2,6 +2,7 @@ package ru.leonov.leetcode.linked_list.test;
 
 import ru.leonov.leetcode.common.component.AbstractTest;
 import ru.leonov.leetcode.common.model.ListNode;
+import ru.leonov.leetcode.common.utils.CommonUtil;
 import ru.leonov.leetcode.linked_list.solution.OddEventListTask;
 
 public class OddEventListTaskTest extends AbstractTest<OddEventListTask> {
@@ -18,33 +19,10 @@ public class OddEventListTaskTest extends AbstractTest<OddEventListTask> {
 
     private void baseFlow() {
         System.out.println(this.getClass().getSimpleName() + "#baseFlow starting test");
-        ListNode initNode = new ListNode(1,
-                new ListNode(2,
-                        new ListNode(3,
-                                new ListNode(4,
-                                        new ListNode(5,
-                                                new ListNode(6,
-                                                        new ListNode(7, null)
-                                                )
-                                        )
-                                )
-                        )
-                )
-        );
 
-        ListNode expected = new ListNode(1,
-                new ListNode(3,
-                        new ListNode(5,
-                                new ListNode(7,
-                                        new ListNode(2,
-                                                new ListNode(4,
-                                                        new ListNode(6, null)
-                                                )
-                                        )
-                                )
-                        )
-                )
-        );
+        ListNode initNode = CommonUtil.buildListNode(new int[]{1,2,3,4,5,6,7});
+        CommonUtil.buildListNode(new int[]{1,3,5,7,2,4,6});
+        ListNode expected = CommonUtil.buildListNode(new int[]{1,3,5,7,2,4,6});
 
         assertResult(expected, solution.oddEvenList(initNode));
 
@@ -52,37 +30,9 @@ public class OddEventListTaskTest extends AbstractTest<OddEventListTask> {
 
     private void extremalCase_1() {
         System.out.println(this.getClass().getSimpleName() + "#extremalCase_1 starting test");
-        ListNode initNode = new ListNode(1,
-                new ListNode(2,
-                        new ListNode(3,
-                                new ListNode(4,
-                                        new ListNode(5,
-                                                new ListNode(6,
-                                                        new ListNode(7,
-                                                                new ListNode(8, null)
-                                                        )
-                                                )
-                                        )
-                                )
-                        )
-                )
-        );
 
-        ListNode expected = new ListNode(1,
-                new ListNode(3,
-                        new ListNode(5,
-                                new ListNode(7,
-                                        new ListNode(2,
-                                                new ListNode(4,
-                                                        new ListNode(6,
-                                                                new ListNode(8, null)
-                                                        )
-                                                )
-                                        )
-                                )
-                        )
-                )
-        );
+        ListNode initNode = CommonUtil.buildListNode(new int[]{1,2,3,4,5,6,7,8});
+        ListNode expected = CommonUtil.buildListNode(new int[]{1,3,5,7,2,4,6,8});
 
         assertResult(expected, solution.oddEvenList(initNode));
     }
