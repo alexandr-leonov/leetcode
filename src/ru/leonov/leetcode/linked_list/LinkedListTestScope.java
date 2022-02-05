@@ -28,4 +28,8 @@ public class LinkedListTestScope implements TestScope {
         runner(new AddTwoNumbersTaskTest());
     }
 
+    public void flattenMultilevelList() {
+        runner(new FlattenMultilevelLinkedListTaskTest());
+    }
+
 }

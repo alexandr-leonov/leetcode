@@ -12,9 +12,7 @@ public class Node {
     public String toString() {
         return "Node{" +
                 "val=" + val +
-                ", prev=" + prev +
                 ", next=" + next +
-                ", child=" + child +
                 '}';
     }
 
@@ -22,12 +20,12 @@ public class Node {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Node node = (Node) o;
-        return val == node.val && Objects.equals(prev, node.prev) && Objects.equals(next, node.next) && Objects.equals(child, node.child);
+        Node listNode = (Node) o;
+        return val == listNode.val && Objects.equals(next, listNode.next);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(val, prev, next, child);
+        return Objects.hash(val, next);
     }
 };
