@@ -8,5 +8,6 @@ public class Main {
         CheckTaskFacade facade = new CheckTaskFacade();
         facade.checkAllLinkedListTasks();
         facade.checkAllTwoPointerTasks();
+        facade.checkAllRecursionTasks();
     }
 }

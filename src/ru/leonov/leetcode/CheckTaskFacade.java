@@ -1,6 +1,7 @@
 package ru.leonov.leetcode;
 
 import ru.leonov.leetcode.linked_list.LinkedListTestScope;
+import ru.leonov.leetcode.recursion.RecursionTestScope;
 import ru.leonov.leetcode.two_pointer.TwoPointerTestScope;
 
 public class CheckTaskFacade {
@@ -21,4 +22,10 @@ public class CheckTaskFacade {
         twoPointerTestScope.intersectionLists();
         twoPointerTestScope.removeNElementFromEndList();
     }
+
+    public void checkAllRecursionTasks() {
+        RecursionTestScope recursionTestScope = new RecursionTestScope();
+        recursionTestScope.revertString();
+    }
+
 }
