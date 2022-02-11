@@ -26,6 +26,7 @@ public class CheckTaskFacade {
     public void checkAllRecursionTasks() {
         RecursionTestScope recursionTestScope = new RecursionTestScope();
         recursionTestScope.revertString();
+        recursionTestScope.swapElements();
     }
 
 }
